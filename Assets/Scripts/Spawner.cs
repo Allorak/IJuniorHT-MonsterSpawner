@@ -6,10 +6,14 @@ public class Spawner : MonoBehaviour
 
     private SpawnPoint[] _spawnPoints;
     private float _timeSinceLastSpawn = 0;
+    private int _currentSpawnPointIndex = 0;
 
     private void Start()
     {
         _spawnPoints = GetComponentsInChildren<SpawnPoint>();
+
+        if (_spawnPoints.Length == 0)
+            Debug.LogWarning("No spawn points found");
     }
 
     private void Update()
@@ -20,13 +24,11 @@ public class Spawner : MonoBehaviour
             return;
 
         _timeSinceLastSpawn = 0;
-        SelectRandomSpawnPoint()?.Spawn();
-    }
 
-    private SpawnPoint SelectRandomSpawnPoint()
-    {
-        return _spawnPoints.Length == 0
-            ? null
-            : _spawnPoints[Random.Range(0, _spawnPoints.Length)];
+        if (_spawnPoints.Length == 0)
+            return;
+
+        _spawnPoints[_currentSpawnPointIndex].Spawn();
+        _currentSpawnPointIndex = (_currentSpawnPointIndex + 1) % _spawnPoints.Length;
     }
 }

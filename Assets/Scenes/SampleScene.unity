@@ -137,11 +137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2291700510504297653, guid: f7b66c2547bd043269f2f4bf508e7091, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.96
+      value: -4.33
       objectReference: {fileID: 0}
     - target: {fileID: 2291700510504297653, guid: f7b66c2547bd043269f2f4bf508e7091, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.55
+      value: -2.86
       objectReference: {fileID: 0}
     - target: {fileID: 2291700510504297653, guid: f7b66c2547bd043269f2f4bf508e7091, type: 3}
       propertyPath: m_LocalPosition.z
@@ -295,11 +295,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2291700510504297653, guid: f7b66c2547bd043269f2f4bf508e7091, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.58
+      value: 5.7
       objectReference: {fileID: 0}
     - target: {fileID: 2291700510504297653, guid: f7b66c2547bd043269f2f4bf508e7091, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.27
+      value: -2.89
       objectReference: {fileID: 0}
     - target: {fileID: 2291700510504297653, guid: f7b66c2547bd043269f2f4bf508e7091, type: 3}
       propertyPath: m_LocalPosition.z
@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2cdeff6c7f54919a14dbabba0a0af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnRate: 1
+  _spawnRate: 2
 --- !u!1001 &9102217495180341592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -581,6 +581,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7267654296944046090, guid: f7b66c2547bd043269f2f4bf508e7091, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 7267654296944046090, guid: f7b66c2547bd043269f2f4bf508e7091, type: 3}
       propertyPath: m_Name
       value: Spawnpoint

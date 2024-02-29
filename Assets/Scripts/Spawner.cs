@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -5,30 +6,38 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float _spawnRate;
 
     private SpawnPoint[] _spawnPoints;
-    private float _timeSinceLastSpawn = 0;
     private int _currentSpawnPointIndex = 0;
+    private bool _isActive = true;
 
     private void Start()
     {
         _spawnPoints = GetComponentsInChildren<SpawnPoint>();
 
         if (_spawnPoints.Length == 0)
+        {
             Debug.LogWarning("No spawn points found");
+            return;
+        }
+
+        StartCoroutine(nameof(SpawnRepeatedly));
     }
 
-    private void Update()
+    private IEnumerator SpawnRepeatedly()
     {
-        _timeSinceLastSpawn += Time.deltaTime;
+        var wait = new WaitForSeconds(_spawnRate);
 
-        if (_timeSinceLastSpawn < _spawnRate)
-            return;
+        while (_isActive)
+        {
+            SpawnEnemy();
+            yield return wait;
+        }
+    }
 
-        _timeSinceLastSpawn = 0;
-
-        if (_spawnPoints.Length == 0)
-            return;
-
-        _spawnPoints[_currentSpawnPointIndex].Spawn();
-        _currentSpawnPointIndex = (_currentSpawnPointIndex + 1) % _spawnPoints.Length;
+    private void SpawnEnemy()
+    {
+        var enemyMovingDirection = Random.insideUnitCircle.normalized;
+        
+        _spawnPoints[_currentSpawnPointIndex].Spawn(enemyMovingDirection);
+        _currentSpawnPointIndex = ++_currentSpawnPointIndex % _spawnPoints.Length;
     }
 }

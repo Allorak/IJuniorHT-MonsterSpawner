@@ -5,12 +5,13 @@ public class SpawnPoint : MonoBehaviour
     [SerializeField] private Enemy _template;
     [SerializeField] private float _spawnOffsetDistance;
 
-    public void Spawn()
+    public void Spawn(Vector2 movingDirection)
     {
         if (_template is null)
             return;
 
-        Instantiate(_template, GetSpawnPosition(), Quaternion.identity);
+        var enemy = Instantiate(_template, GetSpawnPosition(), Quaternion.identity);
+        enemy.SetDirection(movingDirection);
     }
 
     private Vector3 GetSpawnPosition()

@@ -4,14 +4,15 @@ public class SpawnPoint : MonoBehaviour
 {
     [SerializeField] private Enemy _template;
     [SerializeField] private float _spawnOffsetDistance;
+    [SerializeField] private Target _movingTarget;
 
-    public void Spawn(Vector2 movingDirection)
+    public void Spawn()
     {
         if (_template is null)
             return;
 
         var enemy = Instantiate(_template, GetSpawnPosition(), Quaternion.identity);
-        enemy.SetDirection(movingDirection);
+        enemy.SetTarget(_movingTarget);
     }
 
     private Vector3 GetSpawnPosition()

@@ -35,9 +35,7 @@ public class Spawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        var enemyMovingDirection = Random.insideUnitCircle.normalized;
-        
-        _spawnPoints[_currentSpawnPointIndex].Spawn(enemyMovingDirection);
+        _spawnPoints[_currentSpawnPointIndex].Spawn();
         _currentSpawnPointIndex = ++_currentSpawnPointIndex % _spawnPoints.Length;
     }
 }

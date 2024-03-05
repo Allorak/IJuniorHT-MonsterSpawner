@@ -2,26 +2,29 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    protected float Speed = 2;
-
     private const float ReachDistance = 0.1f;
     
+    [SerializeField] private float _speed = 2;
+    
     private Target _target;
-    private Vector2 _movementDirection;
 
     private void Update()
     {
         Vector2 currentPosition = transform.position;
         Vector2 targetPosition = _target.transform.position;
-        var stepDistance = Speed * Time.deltaTime;
         
-        var newPosition = Vector2.MoveTowards(currentPosition, targetPosition, stepDistance);
-        transform.position = newPosition;
-
-        var distanceToTarget = Vector2.Distance(newPosition, targetPosition);
+        var distanceToTarget = Vector2.Distance(currentPosition, targetPosition);
         
         if(distanceToTarget <= ReachDistance)
             Destroy(gameObject);
+        
+        transform.position = GetNewPosition(currentPosition, targetPosition);
+    }
+
+    protected virtual Vector2 GetNewPosition(Vector2 currentPosition, Vector2 targetPosition)
+    {
+        var stepDistance = _speed * Time.deltaTime;
+        return Vector2.MoveTowards(currentPosition, targetPosition, stepDistance);
     }
 
     public void SetTarget(Target target)

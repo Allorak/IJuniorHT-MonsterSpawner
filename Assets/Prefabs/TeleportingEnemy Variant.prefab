@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8392197970562830715
+--- !u!1001 &2128828882686464367
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2551090727709276529, guid: 4460c40d231144dc586ac216027bc3c5, type: 3}
       propertyPath: m_Name
-      value: ColorChangingEnemy Variant
+      value: TeleportingEnemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3512097765027961926, guid: 4460c40d231144dc586ac216027bc3c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.01
+      value: -2.5892103
       objectReference: {fileID: 0}
     - target: {fileID: 3512097765027961926, guid: 4460c40d231144dc586ac216027bc3c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.17
+      value: -2.4325564
       objectReference: {fileID: 0}
     - target: {fileID: 3512097765027961926, guid: 4460c40d231144dc586ac216027bc3c5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52,6 +52,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3933330539896289123, guid: 4460c40d231144dc586ac216027bc3c5, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933330539896289123, guid: 4460c40d231144dc586ac216027bc3c5, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3960784
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933330539896289123, guid: 4460c40d231144dc586ac216027bc3c5, type: 3}
+      propertyPath: m_Color.r
+      value: 0.83165467
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 742142650323216232, guid: 4460c40d231144dc586ac216027bc3c5, type: 3}
     m_RemovedGameObjects: []
@@ -59,22 +71,26 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2551090727709276529, guid: 4460c40d231144dc586ac216027bc3c5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2176895148569206710}
+      addedObject: {fileID: 8907183436333089172}
   m_SourcePrefab: {fileID: 100100000, guid: 4460c40d231144dc586ac216027bc3c5, type: 3}
---- !u!1 &6273611136982165514 stripped
+--- !u!1 &4534092481506650142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2551090727709276529, guid: 4460c40d231144dc586ac216027bc3c5, type: 3}
-  m_PrefabInstance: {fileID: 8392197970562830715}
+  m_PrefabInstance: {fileID: 2128828882686464367}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2176895148569206710
+--- !u!114 &8907183436333089172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6273611136982165514}
+  m_GameObject: {fileID: 4534092481506650142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4424c84608b2a40990cf303c205bb3, type: 3}
+  m_Script: {fileID: 11500000, guid: e684340eee8f0df4bb931fd3d467bad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 2
+  _teleportDistance: 1
+  _teleportCooldown: 0.2
+  _randomTeleportOffset: 0.3

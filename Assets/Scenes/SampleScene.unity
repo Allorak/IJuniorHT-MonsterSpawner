@@ -201,6 +201,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 228579467}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &274950556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 274950557}
+  m_Layer: 0
+  m_Name: Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &274950557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274950556}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.23054864, y: 0.28052866, z: 0.052131016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +513,7 @@ PrefabInstance:
     - target: {fileID: 1304167426259112179, guid: f7b66c2547bd043269f2f4bf508e7091, type: 3}
       propertyPath: _template
       value: 
-      objectReference: {fileID: 1202945725878108478, guid: 6646ec1189f594f4db41a407d9048a36, type: 3}
+      objectReference: {fileID: 742142650323216232, guid: 4460c40d231144dc586ac216027bc3c5, type: 3}
     - target: {fileID: 1304167426259112179, guid: f7b66c2547bd043269f2f4bf508e7091, type: 3}
       propertyPath: _movingTarget
       value: 
@@ -989,7 +1020,7 @@ PrefabInstance:
     - target: {fileID: 1304167426259112179, guid: f7b66c2547bd043269f2f4bf508e7091, type: 3}
       propertyPath: _template
       value: 
-      objectReference: {fileID: 2176895148569206710, guid: f225ec6fc13092c4ead793f93205224c, type: 3}
+      objectReference: {fileID: 8907183436333089172, guid: 93b12e9986d21b240bc44019d6ad8b16, type: 3}
     - target: {fileID: 1304167426259112179, guid: f7b66c2547bd043269f2f4bf508e7091, type: 3}
       propertyPath: _movingTarget
       value: 
@@ -1066,3 +1097,4 @@ SceneRoots:
   - {fileID: 1371325117}
   - {fileID: 1234967898}
   - {fileID: 1406059386}
+  - {fileID: 274950557}
